@@ -1,0 +1,20 @@
+<div>
+    <h1>Add Computer</h1>
+    <form #addComputerForm = "ngForm" (ngSubmit)="submit(); addComputerForm.resetForm();">
+        <div class="form-group">
+            <label for="name">Computer Name</label>
+            <input [(ngModel)]="computer.name" class="form-control" type="text" id="name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="location">Computer Location</label>
+            <input [(ngModel)]="computer.location" class="form-control" type="text" id="location" name="location">
+        </div>
+        <div class="form-group">
+            <label for="ip">Computer IP Address</label>
+            <input [(ngModel)]="computer.ip" class="form-control" type="text" id="ip" name="ip">
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary col-12">
+        </div>
+    </form>
+</div>

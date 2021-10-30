@@ -1,0 +1,76 @@
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <td class="text-end"><strong >EntryID</strong></td>
+            <td>{{user.idProof}}</td>
+        </tr>
+
+        <tr>
+            <td class="text-end"><strong>Full Name </strong></td>
+            <td>{{user.name}}</td>
+        </tr>
+        <tr>
+            <td class="text-end"><strong>User Address </strong></td>
+            <td>{{user.address}}</td>
+        </tr>
+        <tr>
+            <td class="text-end"><strong>Mobile Number </strong></td>
+            <td>{{user.mobile}}</td>
+        </tr>
+        <tr>
+            <td class="text-end"><strong>Email</strong></td>
+            <td>{{user.email}}</td>
+        </tr>
+        <tr>
+            <td class="text-end"><strong>Computer Name </strong></td>
+            <td>{{user.computer}}</td>
+        </tr>
+        <tr>
+            <td class="text-end"><strong>ID Proof </strong></td>
+            <td>{{user.idProof}}</td>
+        </tr>
+        <tr>
+            <td class="text-end"><strong>In Time </strong></td>
+            <td>{{user.inTime}}</td>
+        </tr>
+        <tr>
+            <td class="text-end"><strong>Status</strong></td>
+            <td>{{user.status==="" ? "Not Updated Yet" : user.status }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<form *ngIf="!checkedOut" (ngSubmit)="update()">
+    <div class="form-group">
+        <label for="remark">Remark</label>
+        <textarea [(ngModel)] ="user.remark" class="form-control" name="remark" id="remark" cols="30" rows="10"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="">Fees</label>
+        <input [(ngModel)]="user.fee" class="form-control" type="text" name="remark">
+    </div>
+    <div class="form-group">
+        <label for="status">Status</label>
+        <select [(ngModel)]="user.status" class="form-control" name="status" id="status">
+            <option selected value="CHECKED OUT">CHECKED OUT</option>
+        </select>
+    </div>
+    <div class="form-group mt-2">
+        <input type="submit" value="Update" class="btn btn-primary col-12">
+    </div>
+</form>
+
+<table *ngIf="checkedOut" class="table table-bordered">
+    <tr>
+        <td><strong>Remark</strong></td>
+        <td>{{user.status}}</td>
+    </tr>
+    <tr>
+        <td><strong>Out Time</strong></td>
+        <td>{{user.outTime}}</td>
+    </tr>
+    <tr>
+        <td><strong>Fees</strong></td>
+        <td>{{user.fee}}</td>
+    </tr>
+</table>

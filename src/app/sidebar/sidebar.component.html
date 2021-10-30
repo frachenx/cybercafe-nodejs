@@ -1,0 +1,12 @@
+<div id="sidebar">
+    <!--Sidebar-->
+    <ul class="nav nav-pills flex-column list-unstyled">
+        <app-sidebar-item [title]="'Dashboard'" [url]="'/dashboard'" [icon]="'fas fa-concierge-bell'">
+        </app-sidebar-item>
+        <app-sidebar-combo [mainTitle]="'Computers'" [icon]="'fas fa-desktop'" [items]="[{title:'Add Computer', url:'/add-computer'},{title:'Manage Computers', url:'/manage-computers'}]"></app-sidebar-combo>
+        <app-sidebar-combo [mainTitle]="'Users'" [icon]="'fas fa-users'" [items]="[{title:'Add User', url:'/add-user'},{title:'Manage Users', url:'/manage-users'},{title:'Manage Archived Users', url:'/users-archived'}]"></app-sidebar-combo>
+        <app-sidebar-item [title]="'Search'" [url]="'/search'" [icon]="'fas fa-search'">
+        </app-sidebar-item>
+        <app-sidebar-combo [mainTitle]="'Reports'" [icon]="'fas fa-book'" [items]="[{title:'Between Dates Report', url:'/report'}]"></app-sidebar-combo>
+    </ul>
+</div>

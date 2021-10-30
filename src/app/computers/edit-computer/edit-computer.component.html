@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>UPDATE COMPUTER DETAIL</h1>
+    <form (ngSubmit)="Submit()">
+        <div class="form-group">
+            <label for="name">Computer Name</label>
+            <input value="{{computer.name}}" [(ngModel)]="computer.name" name="name" id="name" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="location">Computer Location</label>
+            <input value="{{computer.location}}" [(ngModel)]="computer.location" name="location" id="location" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="ip">Computer IP</label>
+            <input value="{{computer.ip}}" [(ngModel)]="computer.ip" name="ip" id="ip" type="text" class="form-control">
+        </div>
+        <div class="form-group mt-2">
+            <input value="Update" type="submit" class="btn btn-primary col-12">
+        </div>
+    </form>
+</div>

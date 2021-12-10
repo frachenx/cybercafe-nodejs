@@ -26,5 +26,4 @@ export class AddUserComponent implements OnInit {
     this.userService.addUser(this.user).subscribe(res=>{console.log(res)});
     alert("User Added Correctly");
   }
-
 }

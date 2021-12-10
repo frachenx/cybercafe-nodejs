@@ -12,18 +12,18 @@ export class ComputerService {
   constructor(private http:HttpClient) { 
   }
   addComputer(computer:Computer){
-    return this.http.post<any>(this.baseUrl + "add-computer.php",computer)
+    return this.http.post<any>(this.baseUrl + "computers/add-computer",computer)
   }
 
   getComputers(){
-    return this.http.get<Computer[]>(this.baseUrl + "computers.php")
+    return this.http.get<Computer[]>(this.baseUrl + "computers")
   }
 
   getComputer(id:string){
-    return this.http.get<Computer[]>(this.baseUrl + "edit-computer.php?id=" + id)
+    return this.http.get<Computer[]>(this.baseUrl + "computers/" + id)
   }
 
   updateComputer(computer:Computer){
-    return this.http.post<any>(this.baseUrl + "update-computer.php",computer);
+    return this.http.put<any>(this.baseUrl + "computers/" + computer.id,computer);
   }
 }

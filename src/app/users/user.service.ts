@@ -13,33 +13,33 @@ export class UserService {
   }
 
   addUser(user:User){
-    return this.http.post<any>(this.baseUrl + "add-user.php",user);
+    return this.http.post<any>(this.baseUrl + "users/add-user",user);
   }
 
   getUsers(){
-    return this.http.get<User[]>(this.baseUrl + "users.php" );
+    return this.http.get<User[]>(this.baseUrl + "users/active-users" );
   }
 
   getArchivedUsers(){
-    return this.http.get<User[]>(this.baseUrl + "archive-users.php" );
+    return this.http.get<User[]>(this.baseUrl + "users/archived-users" );
   }
 
   getUser(id:string){
-    return this.http.get<User[]>(this.baseUrl + "view-user.php?id=" + id);
+    return this.http.get<User[]>(this.baseUrl + "users/" + id);
   }
 
   searchUsers(search:string){
-    return this.http.get<User[]>(this.baseUrl+ "search-users.php?search=" + search);
+    return this.http.get<User[]>(this.baseUrl+ "users/search/" + search);
   }
 
   usersReport(startDate:string,endDate:string){
     console.log(`${this.baseUrl}report.php?start=${startDate}&end=${endDate}`);
     console.log(startDate);
-    return this.http.get<User[]>(`${this.baseUrl}report.php?start=${startDate}&end=${endDate}` );
+    return this.http.get<User[]>(`${this.baseUrl}users/${startDate}/${endDate}` );
   }
 
   updateUser(user:User){
-    return this.http.post<any>(this.baseUrl + "update-user.php",user);
+    return this.http.put<any>(this.baseUrl + "users/" + user.id,user);
   }
 
   
